@@ -1,0 +1,38 @@
+{
+  "name": "svg-editor",
+  "version": "1.0.0",
+  "description": "SVG Editor",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --config ./webpack.config.js --mode development"
+  },
+  "keywords": [],
+  "author": "wangkailang",
+  "license": "MIT",
+  "devDependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-env": "^7.5.5",
+    "@babel/preset-react": "^7.0.0",
+    "@types/webpack-env": "^1.14.0",
+    "awesome-typescript-loader": "^5.2.1",
+    "babel-loader": "^8.0.6",
+    "react-hot-loader": "^4.12.10",
+    "webpack": "^4.39.1",
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
+  },
+  "dependencies": {
+    "@types/node": "^12.7.2",
+    "@types/prismjs": "^1.16.0",
+    "@types/react": "^16.9.2",
+    "@types/react-dom": "^16.8.5",
+    "@types/styled-components": "^4.1.18",
+    "prismjs": "^1.17.1",
+    "raw-loader": "^3.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-simple-code-editor": "^0.9.14",
+    "styled-components": "^4.3.2",
+    "typescript": "^3.5.3"
+  }
+}
