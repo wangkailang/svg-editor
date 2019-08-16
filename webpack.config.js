@@ -15,6 +15,10 @@ module.exports = {
         use: 'raw-loader',
       },
       {
+        test: /\.css$/i,
+        use: ['style-loader', 'css-loader'],
+      },
+      {
         test: /\.(ts|tsx)?$/,
         exclude: /node_modules/,
         use: ['awesome-typescript-loader']

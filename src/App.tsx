@@ -1,7 +1,9 @@
 import * as React from 'react';
 import Editor from './Editor';
 import styled from 'styled-components';
-const codeStr = require('./file.txt');
+import codes from './example';
+
+type CodeKeys = keyof typeof codes;
 
 interface Props {
   title: string
@@ -12,21 +14,25 @@ const Title = styled.h2`
   padding: 26px 0 10px 0;
 `
 const Main = styled.div`
-  display: flex;
-`
-const Playground = styled.div`
-  border : 1px solid #ccc;
-  border-radius: 4px;
-  width: 70%;
+  margin: 40px 15px;
 `
 
 const Show = styled.div`
-  width: 30%;
-  border : 1px solid #ccc;
+  background-color: #fafafa;
+  padding: 15px;
+`
+const Select = styled.select`
 `
 
 const App: React.FC<Props> = ({ title }) => {
-  const [code, setCode] = React.useState(codeStr.default);
+  const [option, setOption] = React.useState<CodeKeys>('init');
+  const handleSelect = React.useCallback((evt: any) => {
+    const val: CodeKeys = evt.target.value || 'init';
+    setOption(val);
+    setCode(codes[val])
+  }, [setOption]);
+
+  const [code, setCode] = React.useState(codes['init']);
   const handleChange = React.useCallback(c => {
     setCode(c);
   }, [setCode]);
@@ -36,10 +42,15 @@ const App: React.FC<Props> = ({ title }) => {
       <Title>
         {title}
       </Title>
+      <Select
+        onChange={handleSelect}
+      >
+        <option value="init">init</option>
+        <option value="moon">moon</option>
+      </Select>
       <Main>
-        <Playground>
-          <Editor code={code} handleChange={handleChange} />
-        </Playground>
+        <Editor code={code} handleChange={handleChange} />
+        <h3>Preview</h3>
         <Show dangerouslySetInnerHTML={{ __html: code }} />
       </Main>
     </div>
