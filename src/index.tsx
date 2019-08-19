@@ -4,9 +4,6 @@ import * as ReactDOM from 'react-dom';
 import App from './App';
 const title = 'SVG Editor';
 
-ReactDOM.render(
-  <App title={title} />,
-  document.getElementById('app')
-);
+ReactDOM.render(<App title={title} />, document.getElementById('app'));
 
 module.hot && module.hot.accept();

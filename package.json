@@ -4,6 +4,7 @@
   "description": "SVG Editor",
   "main": "index.js",
   "scripts": {
+    "format": "prettier --write src/**/*.{ts,tsx}",
     "start": "webpack-dev-server --config ./webpack.config.js --mode development"
   },
   "keywords": [],
@@ -16,6 +17,7 @@
     "awesome-typescript-loader": "^5.2.1",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
+    "prettier": "1.18.2",
     "react-hot-loader": "^4.12.10",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.1",

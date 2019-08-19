@@ -10,8 +10,8 @@ require('prismjs/components/prism-jsx');
 import styled from 'styled-components';
 
 interface Props {
-  code: string
-  handleChange: (code: string) => void
+  code: string;
+  handleChange: (code: string) => void;
 }
 
 const Container = styled.div`
@@ -24,7 +24,7 @@ const Container = styled.div`
   textarea {
     outline: 0;
   }
-`
+`;
 
 const Editor: React.FC<Props> = props => {
   console.log('code', props.code);
@@ -37,7 +37,7 @@ const Editor: React.FC<Props> = props => {
         className="container__editor"
       />
     </Container>
-  )
-}
+  );
+};
 
 export default Editor;
