@@ -45,11 +45,12 @@ const App: React.FC<Props> = ({ title }) => {
       <Select
         onChange={handleSelect}
       >
-        <option value="init">init</option>
-        <option value="moon">moon</option>
+        {Object.keys(codes).map(c => (
+          <option key={c} value={c}>{c}</option>
+        ))}
       </Select>
       <Main>
-        <Editor code={code} handleChange={handleChange} />
+        <Editor code={code.trim()} handleChange={handleChange} />
         <h3>Preview</h3>
         <Show dangerouslySetInnerHTML={{ __html: code }} />
       </Main>
