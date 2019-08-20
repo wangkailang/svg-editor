@@ -1,0 +1,22 @@
+.black svg {
+  background-color: #353333;
+}
+
+.rect-front {
+  stroke: #448aff;
+  stroke-width: 2;
+  stroke-dasharray: 180 100;
+}
+.rect-back {
+  stroke-width: 4;
+  filter:url(#filter-blur);
+}
+.neon-light {
+  font-family: "PingFang SC";
+  font-size: 64px;
+  font-weight: normal;
+  text-transform: uppercase;
+  stroke: #6b58c4;
+  stroke-width: 2px;
+  text-shadow: 3px 5px 10px #6b58c4;
+}

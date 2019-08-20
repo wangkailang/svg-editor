@@ -1,17 +1,31 @@
 const init = `
 <svg width="600" height="400">
+  <path id="beerpath" d="M -20.501285,20 A 97.750643,50 0 0 0 175,20" />
 </svg>
 `
 const moon = `
 <svg width="600" height="400">
   <defs>
-    <circle id="whitemoon" cx="420" cy="160" r="60" fill="black" />
+    <circle id="whitemoon" cx="420" cy="160" r="60" fill="#fff" />
     <filter id="blur-moon">
        <feGaussianBlur in="SourceGraphic" stdDeviation="3" />
     </filter>
   </defs>
   <use xlink:href="#whitemoon" />
   <use xlink:href="#whitemoon" filter="url(#blur-moon)" />
+</svg>
+`
+
+const neon_light = `
+<svg width="600" height="400">
+  <filter id="filter-blur">
+    <feGaussianBlur in="SourceGraphic" stdDeviation="4" />
+  </filter>
+  <rect x="2%" y="33%" rx="30" ry="30" width="350" height="90" fill-opacity="1" class="rect-front rect-back"/>
+  <rect x="2%" y="33%" rx="30" ry="30" width="350" height="90" fill-opacity="0" class="rect-front"/>
+  <text text-anchor="middle" x="30%" y="50%" fill-opacity="1" rotate="-10 20 -10 10 30" class="neon-light">
+    你好👋阿斯
+  </text>
 </svg>
 `
 
@@ -41,4 +55,5 @@ export default {
   init,
   moon,
   icons,
+  neon_light,
 }

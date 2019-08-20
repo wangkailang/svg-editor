@@ -36,3 +36,7 @@ module.exports = {
 ```bash
 yarn add --dev @types/webpack-env
 ```
+then add `reference` at `index.tsx` file.
+```
+/// <reference path="../node_modules/@types/webpack-env/index.d.ts" />
+```

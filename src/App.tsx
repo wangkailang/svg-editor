@@ -2,6 +2,7 @@ import * as React from 'react';
 import Editor from './Editor';
 import styled from 'styled-components';
 import codes from './example';
+import './style.css';
 
 type CodeKeys = keyof typeof codes;
 
@@ -21,7 +22,8 @@ const Show = styled.div`
   background-color: #fafafa;
   padding: 15px;
 `;
-const Select = styled.select``;
+
+const bgBlack = ['moon', 'neon_light']
 
 const App: React.FC<Props> = ({ title }) => {
   const [option, setOption] = React.useState<CodeKeys>('init');
@@ -45,17 +47,17 @@ const App: React.FC<Props> = ({ title }) => {
   return (
     <div>
       <Title>{title}</Title>
-      <Select onChange={handleSelect}>
+      <select onChange={handleSelect}>
         {Object.keys(codes).map(c => (
           <option key={c} value={c}>
             {c}
           </option>
         ))}
-      </Select>
+      </select>
       <Main>
         <Editor code={code.trim()} handleChange={handleChange} />
         <h3>Preview</h3>
-        <Show dangerouslySetInnerHTML={{ __html: code }} />
+        <Show className={bgBlack.includes(option) ? 'black': ''} dangerouslySetInnerHTML={{ __html: code }} />
       </Main>
     </div>
   );
